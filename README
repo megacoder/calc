@@ -1,0 +1,31 @@
+Fed up with the awful bc and dc commands supplied with every UNIX
+system ? Try version 1.01 of this new program - calc. At long last - you can
+type expressions in a "natural" BASIC-style syntax and get your answers out
+quickly without having to learn Reverse Polish Notation or some other clumsy
+syntax !
+
+This code is freely re-distributable and modifiable.
+
+Richard K. Lloyd <rkl@connect.org.uk>
+
+To compile:
+
+[Edit Makefile for your site, particularly the TREE setting]
+gmake
+
+To test:
+
+./calc 1+2/3
+[should output "1.66666666666667"]
+
+To install:
+
+gmake install
+
+Notes:
+
+* This package has no "original" URL other than the HP-UX archive one because
+  one of its porters is the author.
+
+* There are no functionality changes between calc 1.00 and 1.01, just edits
+  to remove gcc compiler warnings and also a Makefile is supplied instead of an Imakefile.

@@ -1,0 +1,26 @@
+Package name:     calc
+Version number:   1.01
+Original author:  Richard K. Lloyd <rkl@connect.org.uk>
+Original URL:     
+HP-UX URL:        http://hpux.connect.org.uk/hppd/cgi-bin/search?package=&term=/calc-
+License:          Other/Unknown Open Source Licence
+Languages:        C 
+Build-time deps:  make
+Install tree:     /usr/local
+Report bugs to:   hpux@connect.org.uk
+Tested on:        HP rp3410 running HP-UX 11.11 and 11.23 and
+                  HP rx2600 running HP-UX 11.23
+Compilers used:   PA-RISC - B.11.X.35098-35101.GP (HP C)
+                  Itanium - A.06.12 (HP C)
+LDOPTS setting:   export LDOPTS="+s -L/usr/local/lib -L/usr/local/lib/hpux32"
+Purpose:
+A BASIC-style expression evaluator. This is easier to use than the standard bc
+and dc commands. Supports environment variable reading and writing, an
+interactive mode as well as one-off command-line evaluations and a good range
+of arithmetic functions.
+Date archived:    Fri 24 Nov 2006
+
+-------------------------------------------------------------------------------
+
+This package was developed on an HP-UX system, so please read the README file
+for compilation and installation instructions.

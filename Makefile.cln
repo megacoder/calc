@@ -1,0 +1,20 @@
+PROGRAM = calc
+SRC = $(PROGRAM).c
+CC = gcc
+CFLAGS = -O -Wall -ansi -D_HPUX_SOURCE
+TREE = /usr/local
+MANDIR = $(TREE)/man/man1
+BINDIR = $(TREE)/bin
+
+$(PROGRAM): $(SRC)
+	-$(CC) $(CFLAGS) -o $(PROGRAM) $(SRC) -lm
+
+clean:
+	-rm -f a.out core *.o $(PROGRAM)
+
+install: $(PROGRAM) calc.1
+	-mkdir -p -m 755 $(BINDIR) $(MANDIR)
+	-cp $(PROGRAM) $(BINDIR)
+	-strip $(BINDIR)/$(PROGRAM)
+	-cp calc.1 $(MANDIR)
+	-chmod a+r $(MANDIR)/calc.1

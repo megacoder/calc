@@ -1,0 +1,53 @@
+.TH calc 1 ""
+.SH CALC
+
+calc \- BASIC-style expression evaluator
+
+.SH SYNOPSIS
+
+.B calc
+.RB [ \|\-?\| ]
+.RB [ \|\-h\| ]
+.RB [ \|\-s\| ]
+.RB [ \|\-v\| ]
+.RI [ \|expression[,expression]\| ]
+.SH DESCRIPTION
+.I calc
+is an interactive or command-line expression evaluator using algebraic notation
+similar to most BASIC languages. If an expression is omitted on the command-
+line then an interactive mode is entered.
+During normal command-line use, you may wish to delimit the expression with
+single quotes (e.g. '~(2*2+$F4)/4') to avoid shell problems. The interactive
+mode has no such problems.
+.SH USING ENVIRONMENTAL VARIABLES IN EXPRESSIONS
+It is possible to read and write environmental variables from within calc,
+using the syntax 'symbol=expression' to write to a variable and just 'symbol'
+to read from it. For example, 'A=2,B=3,A*B' will result in 6 being displayed
+and it makes calc extremely useful for floating point calculations in shell
+scripts of course. However, a limitation of UNIX is that you cannot change a
+parent's environment, so an expression like answer=`calc 'A=2,B=3,A*B'` would
+have to be used in a script. As you may have noticed, you can comma-separate
+expressions on one line too.
+.SH OPTIONS
+.PP
+There are only four options with calc:
+.RS
+.TP
+.B  \-?
+Display a syntax usage message.
+.TP
+.B  \-h
+Display the interactive help, explaining about expression syntax.
+.TP
+.B  \-s
+Read from standard input, but don't enter the interactive mode. Useful for
+feeding in large files via stdin (either manually or in a shell script).
+.TP
+.B  \-v
+Display the version number of calc.
+.SH BUGS
+Need to trap overflow errors better (e.g. try 1000^1000).
+.SH SEE ALSO (I WOULDN'T BOTHER)
+bc(1), bs(1), dc(1)
+.SH AUTHOR
+Richard K. Lloyd	<rkl@connect.org.uk>
